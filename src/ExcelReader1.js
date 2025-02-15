@@ -228,7 +228,9 @@ useEffect(()=>{
         fixed: 'left',
         key: 'name',
         width: 150,
-        render: (text) => <a>{text}</a>,
+        responsive: ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'],
+        
+        render: (text) => <a style={{fontWeight:"bold",fontSize:"15px"}}>{text}</a>,
       }]
     Array.from({ length: daysInMonth }).map((_,index)=>{
    
@@ -236,7 +238,8 @@ useEffect(()=>{
             title:index+1,
             dataIndex:index+1,
             key:index+1,
-        width: 150,
+        width:80,
+        responsive: ['xxl', 'xl', 'lg', 'md', 'sm', 'xs']
 
           })
     })
@@ -253,8 +256,9 @@ useEffect(()=>{
    {/* {columns&&attendence&&<CustomTable attendence={attendence} column={columns}/>
 } */}
  <Table 
+
  scroll={{
-    y: 100 * 5,
+    y: 150 * 5,
   }}  bordered pagination={false} columns={columns} dataSource={attendence} />
      
     </div>
