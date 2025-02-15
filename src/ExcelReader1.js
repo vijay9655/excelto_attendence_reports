@@ -255,6 +255,8 @@ useEffect(()=>{
  <Table 
  scroll={{
     y: 100 * 5,
+
+    
   }}  bordered pagination={false} columns={columns} dataSource={attendence} />
      
     </div>
