@@ -227,6 +227,7 @@ useEffect(()=>{
         dataIndex: 'name',
         fixed: 'left',
         key: 'name',
+        width: 150,
         render: (text) => <a>{text}</a>,
       }]
     Array.from({ length: daysInMonth }).map((_,index)=>{
@@ -234,7 +235,9 @@ useEffect(()=>{
         column.push({
             title:index+1,
             dataIndex:index+1,
-            key:index+1
+            key:index+1,
+        width: 150,
+
           })
     })
     setColumns(column)
@@ -249,7 +252,10 @@ useEffect(()=>{
       <input type="file" onChange={handleFileUpload} />
    {/* {columns&&attendence&&<CustomTable attendence={attendence} column={columns}/>
 } */}
- <Table bordered pagination={false} columns={columns} dataSource={attendence} />
+ <Table 
+ scroll={{
+    y: 100 * 5,
+  }}  bordered pagination={false} columns={columns} dataSource={attendence} />
      
     </div>
   );
