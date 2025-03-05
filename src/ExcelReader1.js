@@ -111,53 +111,7 @@ if(value!=null){
 
                   }
 
-                    // if ((colIndex+1) % 2 === 0) {
-                    //     console.log("night==",datewise);
-
-                    //    obj = {}; // Reset obj to avoid overwriting previous values
-                    //     obj.date = day;
-                    //     obj.name = value;
-
-                    //     // Check if the datewise array already has the name with the same date
-                    //     let existingIndex = datewise.findIndex(
-                    //         (entry) => entry.name === value && entry.date === day
-                    //     );
-
-                    //     if (existingIndex !== -1) {
-                    //         datewise[existingIndex].night = (datewise[existingIndex].night || 0) + 1;
-                            
-                    //     } else {
-                    //         obj.night = 1;
-                           
-                    //         console.log("night1==",datewise);
-                    //          // First occurrence of this name on this date
-                    //         datewise.push(obj);
-                    //    day+=1;
-
-                    //     }
-                    //     // Even column index means it's for the "day" part
-                       
-                    // } else {
-                    //     console.log("day==",datewise);
-
-                    //    obj = {}; // Reset obj to avoid overwriting previous values
-                    //     obj.date = day;
-                    //     obj.name = value;
-
-                    //     // Check if the datewise array already has the name with the same date
-                    //     let existingIndex = datewise.findIndex(
-                    //         (entry) => entry.name === value && entry.date === day
-                    //     );
-
-                    //     if (existingIndex !== -1) {
-                    //         datewise[existingIndex].day += 1; // Increment the day count for that entry
-                    //     } else {
-                    //         obj.day = 1; // First occurrence of this name on this date
-                    //         datewise.push(obj);
-                    //         console.log("datewise==",obj);
-                            
-                    //     }  // Odd column index means it's for the "night" part
-                    // }
+   
                 }
             });
 
