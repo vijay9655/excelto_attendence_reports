@@ -8,6 +8,17 @@ import ExcelReader1 from './ExcelReader1';
 function App() {
 
   const [data, setData] = useState([]);
+  const handleCall = () => {
+    const phoneNumber = "+919123456789"; // Replace with dynamic number if needed
+
+    if (/Android/i.test(navigator.userAgent)) {
+        // Android: Try the intent URL
+        window.location.href = `intent://${phoneNumber}#Intent;scheme=tel;action=android.intent.action.CALL;end`;
+    } else {
+        // iOS & other platforms: Open the dialer
+        window.location.href = `tel:${phoneNumber}`;
+    }
+};
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -66,8 +77,19 @@ function App() {
 //     </div>
 //  <ExcelReader/> 
 <div>
-<button class="call-button" onClick={()=>{console.log("entered")
-;setTimeout(()=>{window.location.href = 'tel:09842023899'},100)}}>
+<a href='tel:+919123456789' class="call-button" >
+  +91Call
+</a><br/>
+<a href='tel:9234567899' class="call-button" >
+  Call
+</a><br/>
+<a href='tel:09234567899' class="call-button" >
+  091Call
+</a><br/>
+<button class="call-button" onClick={handleCall}>
+  Call
+</button>
+<button class="call-button" onClick={()=>window.location.href="tel:9923456678"}>
   Call
 </button>
 <ExcelReader1/> 
