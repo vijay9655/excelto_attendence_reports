@@ -65,7 +65,13 @@ function App() {
 //     </div>
 //     </div>
 //  <ExcelReader/> 
+<div>
+<button class="call-button" onClick={()=>{console.log("entered")
+;setTimeout(()=>{window.location.href = 'tel:09842023899'},100)}}>
+  Call
+</button>
 <ExcelReader1/> 
+</div>
   );
 }
 
