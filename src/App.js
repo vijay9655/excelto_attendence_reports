@@ -10,14 +10,17 @@ function App() {
   const [data, setData] = useState([]);
   const handleCall = () => {
     const phoneNumber = "+919123456789"; // Replace with dynamic number if needed
-
-    if (/Android/i.test(navigator.userAgent)) {
-        // Android: Try the intent URL
-        window.location.href = `intent://${phoneNumber}#Intent;scheme=tel;action=android.intent.action.CALL;end`;
-    } else {
-        // iOS & other platforms: Open the dialer
-        window.location.href = `tel:${phoneNumber}`;
-    }
+    const customUrl = `myapp://call?number=${phoneNumber}`;
+    
+    // Try to open the custom app via the URL scheme
+    window.location.href = customUrl;
+    // if (/Android/i.test(navigator.userAgent)) {
+    //     // Android: Try the intent URL
+    //     window.location.href = `intent://${phoneNumber}#Intent;scheme=tel;action=android.intent.action.CALL;end`;
+    // } else {
+    //     // iOS & other platforms: Open the dialer
+    //     window.location.href = `tel:${phoneNumber}`;
+    // }
 };
 
   const handleFileUpload = (event) => {
@@ -102,18 +105,19 @@ function App() {
     >
        <div className="JWyTcc">Call</div>
     </a>
-<a href='tel:+919123456789' class="call-button" >
+<a href='myapp://call?number=09234567899' class="call-button" >
   +91Call
 </a><br/>
-<a href='tel:9234567899' class="call-button" >
+<a href='myapp://call?number=9234567899' class="call-button" >
   Call
 </a><br/>
-<a href='tel:09234567899' class="call-button" >
+<a href='myapp://call?number=09234567899' class="call-button" >
   091Call
 </a><br/>
 <button class="call-button" onClick={handleCall}>
   Call
 </button>
+<a href="whatsapp://call?number=+916380840682">Call Now via WhatsApp</a>
 <button class="call-button" onClick={()=>window.location.href="tel:9923456678"}>
   Call
 </button>
