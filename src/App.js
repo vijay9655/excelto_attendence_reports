@@ -49,6 +49,21 @@ function App() {
       reader.readAsBinaryString(file);
     }
   };
+  const handleClick = (event) => {
+    event.preventDefault(); // Prevent the default anchor behavior
+    
+    // Get the phone number from the data-phone-number attribute
+    const phoneNumber = event.target.getAttribute('data-phone-number');
+    console.log("phoneNumber==",phoneNumber);
+    
+    // Check if the phone number exists
+    if (phoneNumber) {
+      // Initiate a phone call using the 'tel' protocol
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      console.error('Phone number not available!');
+    }
+  };
   return (
 //     <div className="App">
 // <div>
@@ -77,6 +92,16 @@ function App() {
 //     </div>
 //  <ExcelReader/> 
 <div>
+<a 
+      href="#"
+      className="Od1FEc P6Deab"
+      data-phone-number="09842023899"
+      role="button"
+      aria-label="Call"
+      onClick={handleClick}  // Event handler for click
+    >
+       <div className="JWyTcc">Call</div>
+    </a>
 <a href='tel:+919123456789' class="call-button" >
   +91Call
 </a><br/>
